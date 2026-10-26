@@ -16,9 +16,31 @@ h2 { font-size:1.15rem; margin:2rem 0 .4rem; }
 p, li { margin:.4rem 0; }
 ul { padding-left:1.2rem; }
 .meta { color:var(--muted); font-size:.9rem; }
-.lang { margin:2.5rem 0 0; padding-top:2rem; border-top:1px solid var(--line); }
+html:not([data-lang]) .lang { margin:2.5rem 0 0; padding-top:2rem; border-top:1px solid var(--line); }
+html[data-lang="zh"] #en, html[data-lang="en"] #zh { display:none; }
 a { color:var(--accent); }
 </style>
+<script>
+// 按浏览器语言选择显示中文或英文；没有 JS 时两种语言都显示。
+(function () {
+  var root = document.documentElement;
+  var titles = { zh: "Velum 隐私政策", en: "Velum Privacy Policy" };
+  function show(lang) {
+    root.setAttribute("data-lang", lang);
+    root.lang = lang === "zh" ? "zh-CN" : "en";
+    document.title = titles[lang];
+  }
+  var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
+  show(/^zh\b/i.test(langs[0]) ? "zh" : "en");
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[href='#zh'], a[href='#en']");
+    if (!a) return;
+    e.preventDefault();
+    show(a.getAttribute("href").slice(1));
+    window.scrollTo(0, 0);
+  });
+})();
+</script>
 </head>
 <body>
 <main>
