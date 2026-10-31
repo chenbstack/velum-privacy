@@ -55,13 +55,13 @@ a { color:var(--accent); }
 <p>卸载应用程序会移除应用容器中的数据；您原来的本地文件、服务器中的内容和状态不会因此删除，钥匙串项目的保留由系统管理。</p>
 <h2>应用程序会连接的服务</h2>
 <ul>
-<li>您添加的媒体服务器或存储：用于登录、浏览、播放、下载及同步观看状态。这些服务由您自己或第三方运营，会收到完成相应操作所需的请求，其隐私规则以其为准。</li>
+<li>您添加的媒体服务器或存储（包括 SMB、WebDAV 共享和本地文件夹）：用于登录、浏览、播放、下载及同步观看状态。应用程序会读取其中的文件列表、NFO 和字幕文件来建立媒体库，并把结果保存在您的设备上；SMB 的用户名和密码保存在系统钥匙串中，只发送给您指定的共享。这些服务由您自己或第三方运营，会收到完成相应操作所需的请求，其隐私规则以其为准。</li>
 <li>TMDB 本地媒体匹配：添加本地目录后，应用程序会自动将从文件名解析的片名、适用的年份及查询语言发送给 TMDB，获取海报、简介、评分和演职人员等信息；浏览剧集时也会查询集名和剧照。手动搜索匹配会发送您输入的搜索词。不会发送视频内容、服务器帐号密码或完整本地文件路径。</li>
 <li>TMDB 服务器补图：当“优先使用本地图片”关闭时，应用程序可能使用媒体服务器提供的影片标识，或片名、年份与查询语言，向 TMDB 请求海报和剧照。开启该选项只停止服务器补图，不会关闭本地目录的在线匹配。</li>
 <li>网络服务会接收到连接所必需的信息，例如 IP 地址。TMDB 按其隐私政策处理请求：<a href="https://www.themoviedb.org/privacy-policy">TMDB 隐私政策</a>。</li>
 </ul>
 <h2>本地网络</h2>
-<p>应用程序需要访问本地网络，以连接您家中或办公室里的 NAS 和媒体服务器。</p>
+<p>应用程序需要访问本地网络，以连接您家中或办公室里的 NAS、SMB 共享和媒体服务器。</p>
 <h2>您的选择</h2>
 <p>您可以在设置中开启“优先使用本地图片”以停止服务器补图，在“存储与缓存”里清除相应缓存，或移除任一来源。不希望对某个本地目录进行在线匹配时，请勿添加该目录，或移除该本地来源；已发出的网络请求无法撤回。内置示例视频无需联网即可播放。移除来源、媒体记录和下载副本不会删除您原来的本地视频或服务器中的原视频。</p>
 <h2>政策更新</h2>
@@ -81,13 +81,13 @@ a { color:var(--accent); }
 <p>Uninstalling the App removes its container data. It does not delete your original local files or content and state on your servers. Retention of Keychain items is managed by the operating system.</p>
 <h2>Services the App connects to</h2>
 <ul>
-<li><strong>Media servers and storage you add:</strong> used for sign-in, browsing, playback, downloads and watch-state synchronization. These services receive the requests required for those actions and are governed by their own privacy policies.</li>
+<li><strong>Media servers and storage you add (including SMB and WebDAV shares and local folders):</strong> used for sign-in, browsing, playback, downloads and watch-state synchronization. The App reads file lists, NFO and subtitle files from them to build your library and stores the result on your device; SMB credentials are kept in the system Keychain and sent only to the share you specify. These services receive the requests required for those actions and are governed by their own privacy policies.</li>
 <li><strong>TMDB matching for local media:</strong> after you add a local folder, the App automatically sends titles parsed from filenames, applicable years and the query language to TMDB to retrieve posters, descriptions, ratings, cast and crew. It also requests episode names and stills when browsing series. Manual matching sends the search terms you enter. Video content, server account credentials and full local file paths are not sent.</li>
 <li><strong>TMDB artwork for server media:</strong> when “Prefer local artwork” is off, the App may request posters and stills using media identifiers supplied by your server, or titles, years and the query language. Turning this option on stops server-artwork supplementation only; it does not disable online matching for local folders.</li>
 <li>Network services receive information necessary to establish the connection, such as your IP address. TMDB handles requests under its <a href="https://www.themoviedb.org/privacy-policy">privacy policy</a>.</li>
 </ul>
 <h2>Local network</h2>
-<p>The App needs local network access to connect to NAS devices and media servers on your local network.</p>
+<p>The App needs local network access to connect to NAS devices, SMB shares and media servers on your local network.</p>
 <h2>Your choices</h2>
 <p>Turn on “Prefer local artwork” in Settings to stop TMDB artwork supplementation for server media. You can clear applicable caches under “Storage &amp; Cache” or remove a source. If you do not want online matching for a local folder, do not add that folder, or remove that local source. Requests already sent cannot be recalled. The built-in sample video plays without an Internet connection. Removing sources, library records or downloaded copies does not delete your original local videos or original videos on your server.</p>
 <h2>Changes</h2>
